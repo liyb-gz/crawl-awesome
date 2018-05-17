@@ -8,7 +8,7 @@ class RepoSpider(scrapy.Spider):
             'https://github.com/vsouza/awesome-ios'
         ]
         for url in start_urls:
-            yield scrapy.Request(url=url, callback=self.parseStartPages)
+            yield scrapy.Request(url=url, callback=self.parse)
 
     def parseStartPages(self, response):
         self.parse(response)
